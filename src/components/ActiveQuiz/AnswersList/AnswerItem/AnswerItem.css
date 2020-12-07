@@ -12,9 +12,11 @@
 }
 
 .AnswerItem.success {
+    color: white;
     background: rgba(161, 240, 69, .7);
 }
 
 .AnswerItem.error {
+    color: white;
     background: rgba(240, 87, 108, .7);
 }
