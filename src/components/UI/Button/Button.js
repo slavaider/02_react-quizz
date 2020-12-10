@@ -1,18 +1,21 @@
 import React from 'react'
 import './Button.css'
-const Button = (props) => {
+
+const Button = props => {
     const cls = [
         'Button',
         props.type
     ]
+
     return (
-        <React.Fragment>
-            <button className={cls.join(' ')}
-                    onClick={props.OnRetry}
-                    disabled={props.disabled}
-            >
-                {props.children}</button>
-        </React.Fragment>
+        <button
+            onClick={props.onClick}
+            className={cls.join(' ')}
+            disabled={props.disabled}
+        >
+            {props.children}
+        </button>
     )
 }
+
 export default Button
