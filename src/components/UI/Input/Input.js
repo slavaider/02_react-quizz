@@ -1,7 +1,7 @@
 import React from 'react'
 import './Input.css'
 
-function isInvalid({valid,touched,shouldValidate}) {
+function isInvalid({valid, touched, shouldValidate}) {
     return !valid && shouldValidate && touched
 }
 
@@ -20,6 +20,7 @@ const Input = (props) => {
             <input id={htmlFor}
                    type={InputType}
                    value={props.value}
+                   autoComplete="true"
                    onChange={props.onChange}
             />
             {isInvalid(props) ? <span>{props.errorMessage || 'Введите верное значение'}</span> : null}
