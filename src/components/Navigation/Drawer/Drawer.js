@@ -3,11 +3,6 @@ import './Drawer.css'
 import BackDrop from '../../UI/BackDrop/BackDrop'
 import {NavLink} from 'react-router-dom'
 
-const links = [
-    {to: '/', label: 'Список', exact: true},
-    {to: '/auth', label: 'Авторизация', exact: false},
-    {to: '/quiz-creator', label: 'Создать тест', exact: false},
-]
 
 class Drawer extends Component {
     clickHandler = () => {
@@ -19,6 +14,15 @@ class Drawer extends Component {
             'Drawer',
             !this.props.isOpen ? 'close' : null
         ]
+        const links = [
+            {to: '/', label: 'Список', exact: true},
+        ]
+        if (this.props.isAuth) {
+            links.push({to: '/quiz-creator', label: 'Создать тест', exact: false})
+            links.push({to: '/logout', label: 'Выйти', exact: false})
+        } else {
+            links.push({to: '/auth', label: 'Авторизация', exact: false})
+        }
         return (
             <React.Fragment>
                 <nav className={cls.join(' ')}>

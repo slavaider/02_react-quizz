@@ -27,7 +27,7 @@ const FinishedQuiz = (props) => {
                 )
             })}
             <p>Правильно {success_count} из {props.quiz.length}</p>
-            <Button OnRetry={props.OnRetry} type={'primary'}>Повторить</Button>
+            <Button onClick={props.OnRetry} type={'primary'}>Повторить</Button>
             <Link to={'/'}>
                 <Button type={'success'}>Перейти в список тестов</Button>
             </Link>
